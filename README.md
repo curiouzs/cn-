@@ -259,5 +259,34 @@ public class eclient {
     }
 }
 
+Server program:
 
-```
+import
+java.io.DataInputStream;
+import java.io.PrintStream;
+import
+java.net.ServerSocket;
+import java.net.Socket;
+public class EServer {
+public static void main(String[] args) {
+try {
+
+ServerSocket s=new
+
+ServerSocket(5786); String line;
+
+Socket c=s.accept();
+DataInputStream is=new
+DataInputStream(c.getInputStream());
+PrintStream ps=new PrintStream(c.getOutputStream());
+while(true) {
+line=is.readLin
+e();
+ps.println(line);
+}
+}
+catch(Exception e) {
+System.out.println(e);
+}
+}
+}```
